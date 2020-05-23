@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from "next/link";
 
-import Layout, { siteTitle } from '../components/layout'
+import Layout, { siteTitle } from '../components/layoutssr'
 import Date from "../components/date";
 
 import utilStyles from '../styles/utils.module.css'
@@ -15,7 +15,7 @@ export default function Home({ allPostsData } ) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>Static Rendering</p>
+        <p>Server Side Rendering</p>
         <p>
           (This is a sample website - you’ll be building a site like this on{" "}
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
@@ -26,7 +26,7 @@ export default function Home({ allPostsData } ) {
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
-              <Link href="/posts/[id]" as={`/posts/${id}`}>
+              <Link href="/ssrposts/[id]" as={`/ssrposts/${id}`}>
                 <a>{title}</a>
               </Link>
               <br />
@@ -42,7 +42,7 @@ export default function Home({ allPostsData } ) {
 };
 
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const allPostsData = getSortedPostsData();
   return {
     props: {
@@ -50,28 +50,3 @@ export async function getStaticProps() {
     },
   };
 }
-
-//Prefetch llamando a una api
-/*
-import fetch from 'node-fetch'
-
-export async function getSortedPostsData() {
-  // Instead of the file system,
-  // fetch post data from an external API endpoint
-  const res = await fetch("..");
-  return res.json();
-}
-*/
-
-//Prefetch desde una base de datos
-/*
-import someDatabaseSDK from 'someDatabaseSDK'
-
-const databaseClient = someDatabaseSDK.createClient(...)
-
-export async function getSortedPostsData() {
-  // Instead of the file system,
-  // fetch post data from a database
-  return databaseClient.query('SELECT posts...')
-}
-*/

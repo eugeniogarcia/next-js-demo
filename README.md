@@ -1,6 +1,14 @@
 # Introducción
 
-## Crear la app
+## Instalación
+
+### Crear la app
+
+Creamos una app con:
+
+```ps
+npm init next-app
+```
 
 Creamos la app basandonos en el template de aplicación definido en un repositorio en git:
 
