@@ -8,6 +8,11 @@ import utilStyles from '../styles/utils.module.css'
 
 import { getSortedPostsData } from "../lib/posts";
 
+import dynamic from 'next/dynamic'
+const DynamicComponent = dynamic(() =>
+  import('../components/hello').then((mod) => mod.Hello)
+)
+
 export default function Home({ allPostsData } ) {
   return (
     <Layout home={true}>
@@ -37,6 +42,9 @@ export default function Home({ allPostsData } ) {
           ))}
         </ul>
       </section>
+      <div>
+        <DynamicComponent/>
+      </div>
     </Layout>
   );
 };

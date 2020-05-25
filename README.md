@@ -94,3 +94,9 @@ npm install remark remark-html --s
 ```ps
 npm install date-fns --s
 ```
+
+### CORS
+
+```ps
+npm i cors --save
+```
