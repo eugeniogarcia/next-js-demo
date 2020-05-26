@@ -6,6 +6,7 @@ import Date from "../../components/date";
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import utilStyles from "../../styles/utils.module.css";
 
+/* Es muy parecido a lo que habríamos hecho en el caso de static rendering. El método que usamos es getServerSideProps en lugar de getStaticProps. Para construir la página dinámica no tenemos getStaticPaths */
 export default function Post({ postData }) {
   return (
     <Layout>
@@ -23,7 +24,7 @@ export default function Post({ postData }) {
   );
 }
 
-
+/* En SSR tenemos acceso al contexto. Podemos ver como con el contexto podemos ver los parametros con los que se ha hecho la llamada, de forma que podemos construir los datos con los que se debe hacer el renderizado */
 export async function getServerSideProps(context) {
   console.log("Pagina solicitada: ",context.params.mid);
   console.log("Query string: ", context.query);

@@ -3,6 +3,8 @@ import Router from 'next/router';
 import Layout from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
 
+/* También podemos usar la api de routing directamente. Aqui vemos como usarla. En la página dinámica hemos visto otro uso, cuando tenemos fallback activado */
+
 function About() {
     return (
       <Layout>

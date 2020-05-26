@@ -1,3 +1,6 @@
+/* Lo que guardemos en el directorio /pages/api se trata como una api rest. Podemos gestionar diferentes métodos. Este es un ejemplo básico
+*/
+
 export default (req, res) => {
     if (req.method === 'POST') {
         // Process a POST request

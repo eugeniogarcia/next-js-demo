@@ -6,6 +6,12 @@ import Link from 'next/link'
 const name = 'Eugenio Garcia San Martin'
 export const siteTitle = 'Next.js Sample Website'
 
+/*Es un componente que reutilizaremos en todas las página
+Con home pasamos un booleano que se usa para decir que renderizar. Así por ejemplo en la 
+pagina inicial, home=true, podemos mostrar una cosa diferente que en el resto de páginas
+
+Los componentes tienen sus estilos, css, privados, especificos.
+*/
 export default function Layout({ children, home }) {
     return (
         <div className={styles.container}>
@@ -25,7 +31,7 @@ export default function Layout({ children, home }) {
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
             <header className={styles.header}>
-                {home ? (
+                { home  ? (
                     <>
                         <img
                             src="/images/profile.jpg"

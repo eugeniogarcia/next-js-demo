@@ -1,5 +1,8 @@
 import cookies from "../../components/cookies";
 
+
+/*Demuestra como fijar una cookie en una api*/
+
 const handler = (req, res) => {
   // The cookie middleware will add the `set-cookie` header
   res.cookie("Next.js", "api-middleware!");

@@ -6,6 +6,7 @@ import Link from 'next/link'
 const name = 'Eugenio Garcia San Martin'
 export const siteTitle = 'Next.js Sample Website'
 
+//Es igual que layout, solo que en los Link apuntamos a la pagina de inicio que se construye con SSR
 export default function Layout({ children, home }) {
     return (
         <div className={styles.container}>

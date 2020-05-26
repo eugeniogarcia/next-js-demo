@@ -1,5 +1,7 @@
 import Cors from 'cors'
 
+/*Podemos definir un middleware, utilizar CORS, usar cookies, ...*/
+
 // Initializing the cors middleware
 const cors = Cors({
   methods: ["GET", "POST", "OPTIONS"],
